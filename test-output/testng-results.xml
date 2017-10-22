@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25299" started-at="2017-10-21T02:52:56Z" finished-at="2017-10-21T02:53:21Z">
+  <suite name="Suite" duration-ms="64410" started-at="2017-10-22T05:45:12Z" finished-at="2017-10-22T05:46:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25299" started-at="2017-10-21T02:52:56Z" finished-at="2017-10-21T02:53:21Z">
+    <test name="Test" duration-ms="64410" started-at="2017-10-22T05:45:12Z" finished-at="2017-10-22T05:46:16Z">
       <class name="TestNGPackage.NewTest">
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:TestNGPackage.NewTest@4de8b406]" name="verifyHomepageTitle" duration-ms="25272" started-at="2017-10-21T08:22:56Z" finished-at="2017-10-21T08:23:21Z">
+        <test-method status="PASS" signature="startbrowser()[pri:0, instance:TestNGPackage.NewTest@1810399e]" name="startbrowser" is-config="true" duration-ms="3269" started-at="2017-10-22T11:15:12Z" finished-at="2017-10-22T11:15:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startbrowser -->
+        <test-method status="PASS" signature="startbrowser()[pri:0, instance:TestNGPackage.NewTest1@32d992b2]" name="startbrowser" is-config="true" duration-ms="2372" started-at="2017-10-22T11:15:15Z" finished-at="2017-10-22T11:15:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startbrowser -->
+        <test-method status="PASS" signature="capitalgroup()[pri:1, instance:TestNGPackage.NewTest@1810399e]" name="capitalgroup" duration-ms="39764" started-at="2017-10-22T11:15:17Z" finished-at="2017-10-22T11:15:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- capitalgroup -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:2, instance:TestNGPackage.NewTest@1810399e]" name="verifyHomepageTitle" duration-ms="12121" started-at="2017-10-22T11:15:57Z" finished-at="2017-10-22T11:16:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="Closebrowser()[pri:0, instance:TestNGPackage.NewTest@1810399e]" name="Closebrowser" is-config="true" duration-ms="2531" started-at="2017-10-22T11:16:11Z" finished-at="2017-10-22T11:16:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closebrowser -->
+        <test-method status="PASS" signature="Closebrowser()[pri:0, instance:TestNGPackage.NewTest1@32d992b2]" name="Closebrowser" is-config="true" duration-ms="2873" started-at="2017-10-22T11:16:13Z" finished-at="2017-10-22T11:16:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closebrowser -->
       </class> <!-- TestNGPackage.NewTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="TestNGPackage.NewTest1">
+        <test-method status="PASS" signature="capitalgroup()[pri:1, instance:TestNGPackage.NewTest1@32d992b2]" name="capitalgroup" duration-ms="42322" started-at="2017-10-22T11:15:17Z" finished-at="2017-10-22T11:16:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- capitalgroup -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:2, instance:TestNGPackage.NewTest1@32d992b2]" name="verifyHomepageTitle" duration-ms="11008" started-at="2017-10-22T11:16:00Z" finished-at="2017-10-22T11:16:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+      </class> <!-- TestNGPackage.NewTest1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
