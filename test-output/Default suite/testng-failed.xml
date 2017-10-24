@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestNGPackage.NewTest">
+      <class name="TestNGPackage.ReadExcelDataProvider">
         <methods>
-          <include name="startbrowser"/>
-          <include name="Closebrowser"/>
-          <include name="capitalgroup"/>
+          <include name="testSetup"/>
+          <include name="VerifyInvalidLogin" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- TestNGPackage.NewTest -->
+      </class> <!-- TestNGPackage.ReadExcelDataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,7 +6,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,14 +24,18 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
 public class NewTest1 {
-	 public static String driverPath = "C:\\Users\\megha\\Desktop\\SeleniumJarFiles\\chromedriver_win32\\";
+	// public static String driverPath = "C:\\Users\\megha\\Desktop\\SeleniumJarFiles\\chromedriver_win32\\";
+	
+	
 	 public static WebDriver driver;
 	 
 	 @BeforeTest
-	 public void startbrowser()
+	 public void startbrowser() throws IOException 
 	 {
+		
 		 System.out.println("launching chrome browser");
-			System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
+		 String driverPath = configkeyvalue("driverPath");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 			driver = new ChromeDriver();
      }
 	 
@@ -41,13 +50,14 @@ public class NewTest1 {
 	 }
 	 
 	 
-	 @Test(priority = 2)
-	  public void verifyHomepageTitle() {
+	 @Test(priority = 1)
+	  public void verifyHomepageTitle() throws IOException {
 	       
 		// System.out.println("launching chrome browser");
 		//	System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 			//driver = new ChromeDriver();
-			String Url = "https://www.americanfunds.com/advisor";
+		String Url= configkeyvalue("AFIURL");
+			//String Url = "https://www.americanfunds.com/advisor"; Keyvalue
 			driver.navigate().to(Url);
 			System.out.println(driver.getPageSource());
 			
@@ -56,13 +66,14 @@ public class NewTest1 {
 			
 	  }
 	 
-	 @Test (priority = 1)
-	  public void capitalgroup() {
+	 @Test (priority = 2)
+	  public void capitalgroup() throws IOException {
 	       
 		// System.out.println("launching chrome browser");
 			//System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
 			//driver = new ChromeDriver();
-			  driver.navigate().to("https://www.thecapitalgroup.com/us/about.html");
+		 String Url= configkeyvalue("InstURL");
+			  driver.navigate().to(Url);
 	             driver.findElement(By.linkText("Our Locations")).click();
 	             List<WebElement> Locations = driver.findElements(By.xpath("//div[@class='row-fluid office-locations']/div/ul/li"));
 	             int totalCGLocation = Locations.size();
@@ -104,6 +115,18 @@ public class NewTest1 {
 			
 	  }
 	 
+	 public String configkeyvalue(String key) throws IOException
+	 {
+		// Create FileInputStream Object  
+				 FileInputStream fileInput = new FileInputStream(new File("dataFile.properties"));  
+				 // Create Properties object  
+				 Properties prop = new Properties();  
+				 //load properties file  
+				 prop.load(fileInput);  
+				 String Keyvalue =prop.getProperty(key);
+			return Keyvalue;
+
 	 
+	 }
 
 }

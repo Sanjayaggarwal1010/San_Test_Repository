@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test name="Test(failed)" parallel="classes">
     <classes>
       <class name="TestNGPackage.NewTest">
         <methods>
           <include name="startbrowser"/>
+          <include name="verifyHomepageTitle"/>
           <include name="Closebrowser"/>
           <include name="capitalgroup"/>
         </methods>
       </class> <!-- TestNGPackage.NewTest -->
+      <class name="TestNGPackage.NewTest1">
+        <methods>
+          <include name="verifyHomepageTitle"/>
+          <include name="capitalgroup"/>
+          <include name="startbrowser"/>
+          <include name="Closebrowser"/>
+        </methods>
+      </class> <!-- TestNGPackage.NewTest1 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

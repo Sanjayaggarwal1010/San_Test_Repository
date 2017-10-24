@@ -1,47 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="3" ignored="0" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="64410" started-at="2017-10-22T05:45:12Z" finished-at="2017-10-22T05:46:16Z">
+  <suite name="Default suite" duration-ms="33294" started-at="2017-10-24T02:13:03Z" finished-at="2017-10-24T02:13:36Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="64410" started-at="2017-10-22T05:45:12Z" finished-at="2017-10-22T05:46:16Z">
-      <class name="TestNGPackage.NewTest">
-        <test-method status="PASS" signature="startbrowser()[pri:0, instance:TestNGPackage.NewTest@1810399e]" name="startbrowser" is-config="true" duration-ms="3269" started-at="2017-10-22T11:15:12Z" finished-at="2017-10-22T11:15:15Z">
+    <test name="Default test" duration-ms="33294" started-at="2017-10-24T02:13:03Z" finished-at="2017-10-24T02:13:36Z">
+      <class name="TestNGPackage.ReadExcelDataProvider">
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:TestNGPackage.ReadExcelDataProvider@68be2bc2]" name="testSetup" is-config="true" duration-ms="5662" started-at="2017-10-24T07:43:03Z" finished-at="2017-10-24T07:43:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startbrowser -->
-        <test-method status="PASS" signature="startbrowser()[pri:0, instance:TestNGPackage.NewTest1@32d992b2]" name="startbrowser" is-config="true" duration-ms="2372" started-at="2017-10-22T11:15:15Z" finished-at="2017-10-22T11:15:17Z">
+        </test-method> <!-- testSetup -->
+        <test-method status="FAIL" signature="VerifyInvalidLogin(java.lang.String, java.lang.String)[pri:0, instance:TestNGPackage.ReadExcelDataProvider@68be2bc2]" name="VerifyInvalidLogin" duration-ms="12182" started-at="2017-10-24T07:43:09Z" data-provider="empLogin" finished-at="2017-10-24T07:43:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Megha]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12333]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at TestNGPackage.ReadExcelDataProvider.VerifyInvalidLogin(ReadExcelDataProvider.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.id: global-alert-queue
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'MJ', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startbrowser -->
-        <test-method status="PASS" signature="capitalgroup()[pri:1, instance:TestNGPackage.NewTest@1810399e]" name="capitalgroup" duration-ms="39764" started-at="2017-10-22T11:15:17Z" finished-at="2017-10-22T11:15:57Z">
+        </test-method> <!-- VerifyInvalidLogin -->
+        <test-method status="FAIL" signature="VerifyInvalidLogin(java.lang.String, java.lang.String)[pri:0, instance:TestNGPackage.ReadExcelDataProvider@68be2bc2]" name="VerifyInvalidLogin" duration-ms="7320" started-at="2017-10-24T07:43:21Z" data-provider="empLogin" finished-at="2017-10-24T07:43:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sanjay]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[21333]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at TestNGPackage.ReadExcelDataProvider.VerifyInvalidLogin(ReadExcelDataProvider.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.id: global-alert-queue
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'MJ', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- capitalgroup -->
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:2, instance:TestNGPackage.NewTest@1810399e]" name="verifyHomepageTitle" duration-ms="12121" started-at="2017-10-22T11:15:57Z" finished-at="2017-10-22T11:16:09Z">
+        </test-method> <!-- VerifyInvalidLogin -->
+        <test-method status="FAIL" signature="VerifyInvalidLogin(java.lang.String, java.lang.String)[pri:0, instance:TestNGPackage.ReadExcelDataProvider@68be2bc2]" name="VerifyInvalidLogin" duration-ms="7011" started-at="2017-10-24T07:43:28Z" data-provider="empLogin" finished-at="2017-10-24T07:43:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sdfsf]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: global-alert-queue (tried for 5 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at TestNGPackage.ReadExcelDataProvider.VerifyInvalidLogin(ReadExcelDataProvider.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.id: global-alert-queue
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'MJ', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyHomepageTitle -->
-        <test-method status="PASS" signature="Closebrowser()[pri:0, instance:TestNGPackage.NewTest@1810399e]" name="Closebrowser" is-config="true" duration-ms="2531" started-at="2017-10-22T11:16:11Z" finished-at="2017-10-22T11:16:13Z">
+        </test-method> <!-- VerifyInvalidLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestNGPackage.ReadExcelDataProvider@68be2bc2]" name="tearDown" duration-ms="868" started-at="2017-10-24T07:43:35Z" finished-at="2017-10-24T07:43:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Closebrowser -->
-        <test-method status="PASS" signature="Closebrowser()[pri:0, instance:TestNGPackage.NewTest1@32d992b2]" name="Closebrowser" is-config="true" duration-ms="2873" started-at="2017-10-22T11:16:13Z" finished-at="2017-10-22T11:16:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Closebrowser -->
-      </class> <!-- TestNGPackage.NewTest -->
-      <class name="TestNGPackage.NewTest1">
-        <test-method status="PASS" signature="capitalgroup()[pri:1, instance:TestNGPackage.NewTest1@32d992b2]" name="capitalgroup" duration-ms="42322" started-at="2017-10-22T11:15:17Z" finished-at="2017-10-22T11:16:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- capitalgroup -->
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:2, instance:TestNGPackage.NewTest1@32d992b2]" name="verifyHomepageTitle" duration-ms="11008" started-at="2017-10-22T11:16:00Z" finished-at="2017-10-22T11:16:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomepageTitle -->
-      </class> <!-- TestNGPackage.NewTest1 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestNGPackage.ReadExcelDataProvider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
